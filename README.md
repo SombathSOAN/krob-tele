@@ -38,3 +38,28 @@ node bot.js
 ```
 
 The bot will exit immediately if the token is missing.
+
+### Admin web panel
+
+A basic Express web server (`server.js`) provides a minimal admin panel
+for editing `config.json`. It requires authentication.
+
+1. Install dependencies:
+
+```bash
+npm install express express-session body-parser
+```
+
+2. Set login credentials via environment variables:
+   - `ADMIN_USER` (default `admin`)
+   - `ADMIN_PASS` (default `changeme`)
+   - `SESSION_SECRET` for session encryption
+
+3. Start the panel:
+
+```bash
+node server.js
+```
+
+Visit `http://localhost:3000/login` and authenticate to view or update
+the configuration.
